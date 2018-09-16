@@ -1,0 +1,34 @@
+[
+  {
+    "id": 10000, "name": "George", "age": 28, "children": [
+      { "id": 10001, "name": "John", "age": 3 },
+      { "id": 10010, "name": "Peter", "age": 8 }
+    ], "friends": [
+      { "id": 10003, "name": "Alex", "age": 35 },
+      { "id": 10005, "name": "Steve", "age": 40 },
+      { "id": 10007, "name": "Ray", "age": 40 }
+    ]
+  },
+  {
+    "id": 10008, "name": "Jane", "age": 25, "children": []
+  },
+  {
+    "id": 10020, "name": "Phil", "age": 32, "friends": [
+      {
+        "id": 10030, "name": "Ron", "age": 20, "friends": [
+          { "id": 10001, "name": "John", "age": 30 },
+          { "id": 10003, "name": "Alex", "age": 35 }
+        ]
+      },
+      {
+        "id": 10005, "name": "Steve", "age": 40, "friends": [
+          { "id": 10003, "name": "Alex", "age": 35, "friends": [
+            { "id": 10001, "name": "John", "age": 30 },
+            {"id": 10000, "name": "George", "age": 28 }
+          ]},
+          { "id": 10007, "name": "Ray", "age": 40 }
+        ]
+      }
+    ]
+  }
+]
