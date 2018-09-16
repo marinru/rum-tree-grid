@@ -63,7 +63,18 @@ export default {
             on: {
               click: e => {
                 // get data for this branch
-                this.toggleOpen(nodeData, childBranchProp.name);
+                if (!nodeData[childBranchProp.name]._isOpen
+                  && !nodeData[childBranchProp.name]._isLoaded
+                  && childBranchProp.loader) {
+                    childBranchProp.loader(nodeData)
+                        .then(data => nodeData[childBranchProp.name] = (data || []))
+                        .then(() => {
+                        this.$set(nodeData[childBranchProp.name], "_isLoaded", true);
+                        this.toggleOpen(nodeData, childBranchProp.name);
+                        });
+                  } else {
+                    this.toggleOpen(nodeData, childBranchProp.name);
+                  }                
               }
             }
           },
