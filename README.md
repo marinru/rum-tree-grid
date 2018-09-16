@@ -1,4 +1,4 @@
-# test-project
+# rum-tree-grid
 
 > A Vue.js project
 
